@@ -7,6 +7,7 @@ define('WPISSUES_THEME_NAME', 'wpissues');
 define('WPISSUES_FOLDER', $_SERVER['DOCUMENT_ROOT']);
 define('WPISSUES_THEME_FOLDER', str_replace("\\", "/", dirname(__FILE__)));
 define('WPISSUES_THEME_PATH', '/' . substr(WPISSUES_THEME_FOLDER, stripos(WPISSUES_THEME_FOLDER, 'wp-content')));
+define( 'GITHUB_UPDATER_EXTENDED_NAMING', true );
 
 function p($value){
     echo '<pre>'; var_dump($value); echo '</pre>';
