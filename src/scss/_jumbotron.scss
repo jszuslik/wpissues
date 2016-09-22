@@ -1,0 +1,84 @@
+
+@media only screen and (min-width: 320px) {
+  .jumbotron .form-control {
+    color: #ffffff;
+  }
+}
+@media only screen and (min-width: 480px) {
+
+}
+@media only screen and (min-width: 768px) {
+  .bg1 {
+    background-image: url(img/bd1.png);
+  }
+  .container-bkgd {
+    background-color: rgba(0,0,0,0.5);
+  }
+  .jumbotron .jumbo-header {
+    padding: 15px 15px 0 15px;
+    color: #ffffff;
+    font-size: 3em;
+    font-weight: bold;
+    text-align: center;
+  }
+  .jumbotron .jumbo-content {
+    color: #ffffff;
+    padding: 30px 0 0 0;
+  }
+  .agent-image-container {
+    display: block;
+  }
+  .agent-image-container img {
+    margin: 0 auto;
+  }
+  .table-row {
+    display: table-row;
+  }
+  .table-cell {
+    display: table-cell;
+  }
+  .jumbotron .form-group {
+    width: 50%;
+    margin-top: 15px;
+  }
+  .jumbotron .form-control,
+  .jumbotron .form-group .form-control {
+  background-image: -webkit-gradient(linear,left top,left bottom,from(#ffffff),to(#ffffff)),-webkit-gradient(linear,left top,left bottom,from(#D2D2D2),to(#D2D2D2));
+    background-image: -webkit-linear-gradient(#ffffff,#ffffff),-webkit-linear-gradient(#D2D2D2,#D2D2D2);
+    background-image: -o-linear-gradient(#ffffff,#ffffff),-o-linear-gradient(#D2D2D2,#D2D2D2);
+    background-image: linear-gradient(#ffffff,#ffffff),linear-gradient(#D2D2D2,#D2D2D2);
+  }
+  .jumbotron .form-group.label-floating label.control-label,
+  .jumbotron .form-group.label-placeholder label.control-label {
+    color: #ffffff;
+  }
+  .jumbotron .frm_error_style {
+    color: red;
+  }
+  .jumbotron .frm_error {
+    color: red;
+    margin-top: 25px;
+  }
+  .jumbotron .form-group.is-focused label,
+  .jumbotron .form-group.is-focused label.control-label {
+    color: #ffffff;
+  }
+  .btn-group-raised .btn.btn-danger,
+  .btn-group-raised .input-group-btn .btn.btn-danger,
+  .btn.btn-fab.btn-danger,
+  .btn.btn-raised.btn-danger,
+  .input-group-btn .btn.btn-fab.btn-danger,
+  .input-group-btn .btn.btn-raised.btn-danger {
+    background-color: #d32f2f;
+  }
+  .help-block {
+    color: #ffffff;
+  }
+}
+@media only screen and (min-width: 992px) {
+
+}
+@media only screen and (min-width: 1200px) {
+
+}
+

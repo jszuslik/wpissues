@@ -1,0 +1,37 @@
+@media only screen and (min-width: 320px) {
+
+}
+@media only screen and (min-width: 480px) {
+
+}
+@media only screen and (min-width: 768px) {
+  .guarantee {
+    background-color: #d32f2f;
+    padding: 45px 0;
+  }
+  .guarantee .panel {
+    margin: 0;
+  }
+  .guarantee h2 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    color: #4b4b4b;
+    margin: 0;
+  }
+  .guarantee_list {
+    margin: 0;
+  }
+  .guarantee_item {
+    margin: 30px 0;
+    font-size: 1.125em;
+    font-weight: bold;
+  }
+}
+@media only screen and (min-width: 992px) {
+
+}
+@media only screen and (min-width: 1200px) {
+
+}
+

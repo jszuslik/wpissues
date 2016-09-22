@@ -1,0 +1,47 @@
+@media only screen and (min-width: 320px) {
+    #wpi_meta.postbox {
+        float: left;
+        width: 100%;
+    }
+    .wpi_admin_column_1 {
+        float: left;
+        display: block;
+        width: 94%;
+        border: 1px solid #eaeaea;
+        margin: 15px;
+        padding: 15px;
+    }
+    .wpi_admin_column_3 {
+        display: block;
+        width: 99%;
+        border: 1px solid #eaeaea;
+        padding: 15px;
+    }
+    #wpi_meta .wpi_admin_column_3 h2 {
+        padding: 0;
+        margin-bottom: 10px;
+    }
+    #wpi_meta textarea,
+    #wpi_meta input[type='text'] {
+        margin-bottom: 3px;
+        width: 99%;
+    }
+}
+@media only screen and (min-width: 480px) {
+
+}
+@media only screen and (min-width: 768px) {
+
+}
+@media only screen and (min-width: 992px) {
+    .wpi_admin_column_3 {
+        float: left;
+        margin: 15px;
+        width: 26%;
+        border: 1px solid #eaeaea;
+    }
+}
+@media only screen and (min-width: 1200px) {
+
+}
+

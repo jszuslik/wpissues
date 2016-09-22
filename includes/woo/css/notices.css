@@ -1,0 +1,22 @@
+.wpi_woo_message {
+    line-height: 3;
+}
+.wpi_woo_message:before {
+    color: #8fae1b;
+    font-family: WooCommerce;
+    content: "\e015";
+    display: inline-block;
+    margin-right: 15px;
+}
+.woocommerce .woocommerce-message:before {
+    content: none;
+    color: #8fae1b;
+}
+.woocommerce .woocommerce-error:before, .woocommerce .woocommerce-info:before, .woocommerce .woocommerce-message:before {
+    font-family: WooCommerce;
+    content: none;
+    display: inline-block;
+    position: absolute;
+    top: 1em;
+    left: 1.5em;
+}

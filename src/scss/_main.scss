@@ -1,0 +1,190 @@
+/*
+	Theme Name: WP-ISSUES
+	Theme URI: https://wp-issues.com
+	Author: Joshua Szuslik
+	Author URI: https://joshuaszuslik.us
+	Description: A Theme for WP_ISSUES.COM
+	Version: 1.0.0
+	License: GNU General Public License version 3.0
+	License URI: http://www.gnu.org/licenses/gpl-3.0.html
+*/
+
+/*Wordpress editor styles start*/
+html {
+  overflow-x: hidden;
+}
+body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  background-color: #f5f5f5;
+}
+a:focus,
+a:hover {
+  text-decoration: none;
+}
+.entry-content img {
+  margin: 0 0 1.5em 0;
+  max-width: 100%;
+  height: auto;
+}
+.alignleft, img.alignleft {
+  margin-right: 1.5em;
+  display: inline;
+  float: left;
+}
+.alignright, img.alignright {
+  margin-left: 1.5em;
+  display: inline;
+  float: right;
+}
+.aligncenter, img.aligncenter {
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  clear: both;
+}
+.alignnone, img.alignnone {
+  /* not sure about this one */
+}
+.wp-caption {
+  margin-bottom: 1.5em;
+  text-align: center;
+  padding-top: 5px;
+}
+.wp-caption img {
+  border: 0 none;
+  padding: 0;
+  margin: 0;
+}
+.wp-caption p.wp-caption-text {
+  line-height: 1.5;
+  font-size: 10px;
+  margin: 0;
+}
+.wp-smiley {
+  margin: 0 !important;
+  max-height: 1em;
+}
+blockquote.left {
+  margin-right: 20px;
+  text-align: right;
+  margin-left: 0;
+  width: 33%;
+  float: left;
+}
+blockquote.right {
+  margin-left: 20px;
+  text-align: left;
+  margin-right: 0;
+  width: 33%;
+  float: right;
+}
+.no-padding {
+  padding: 0 !important;
+}
+.no-margin {
+  margin: 0 !important;
+}
+.clearfix:before, .clearfix:after { display: block; content: ""; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+@media only screen and (min-width: 320px) {
+  h1 {
+    font-size: 1.750em;
+    font-weight: 400;
+    letter-spacing: 0.087em;
+    line-height: 1.444;
+  }
+  h2 {
+    font-size: 2.000em;
+    font-weight: 300;
+    letter-spacing: 0.100em;
+    line-height: 1.444;
+  }
+  h3 {
+    font-size: 1.500em;
+    font-weight: 800;
+    letter-spacing: 0.075em;
+    line-height: 1.444;
+  }
+  h4 {
+    font-size: 1.188em;
+    font-weight: 800;
+    letter-spacing: 0.059em;
+    line-height: 1.444;
+  }
+  h5 {
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 0.110em;
+  }
+  h6 {
+
+  }
+  .square {
+    width:28px;
+    height:28px;
+    position:relative;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    color:red;
+    display: inline-block;
+  }
+  .plus, .minus {
+    width:28px;
+    height:28px;
+    display:block;
+    position:absolute;
+    top:0; left:0;
+    line-height:32px;
+    text-align:center;
+    -webkit-transition: .5s all ease-out;
+    transition: .5s all ease-out;
+  }
+  .plus {
+    opacity:0;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+  }
+  .collapsed .square .plus {
+    opacity:1;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  .minus {
+    opacity:1;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  .collapsed .square .minus {
+    opacity:0;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+  .panel-heading.faq {
+    cursor: pointer;
+  }
+  .faq-question {
+    margin: 0;
+    display: inline-block;
+    vertical-align: super;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+}
+@media only screen and (min-width: 480px) {
+
+}
+@media only screen and (min-width: 768px) {
+
+}
+@media only screen and (min-width: 992px) {
+
+}
+@media only screen and (min-width: 1200px) {
+
+}
+
