@@ -17,9 +17,9 @@ function wpi_email_form(){
 }
 
 function wpi_email_submit_scripts(){
-    if(is_front_page()) {
+
         wp_enqueue_script('wpi-email-submit-js', get_stylesheet_directory_uri() . '/includes/email-submit-plugin/js/wpi-email-submit.js', array('jquery'), '1.13', true);
-    }
+
 
     if(is_checkout()){
         wp_enqueue_script('wpi-email-to-checkout', get_stylesheet_directory_uri() . '/includes/email-submit-plugin/js/wpi-email-to-checkout.js', array('jquery'), '1.0', true);
