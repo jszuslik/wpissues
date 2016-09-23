@@ -14,4 +14,10 @@ function wpi_user_submit_email(){
         echo url()."/checkout?wpi_submitted_email=".$email_from;
         wp_die();
     }
+
+    if( $_POST['type'] == 'create_mission'){
+        wpi_add_mission_to_cart();
+        echo url()."/checkout";
+        wp_die();
+    }
 }

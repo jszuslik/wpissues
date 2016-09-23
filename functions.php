@@ -39,6 +39,7 @@ add_action( 'widgets_init', 'wpi_widgets_init' );
 
 register_nav_menus( array(
     'primary' => __( 'Primary Menu', WPISSUES_THEME_NAME ),
+    'loggedin' => __('Logged In Menu', WPISSUES_THEME_NAME),
     'quick' => __( 'Quick Links', WPISSUES_THEME_NAME )
 ) );
 

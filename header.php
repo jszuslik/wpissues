@@ -100,28 +100,33 @@ $options = get_option('wpi_settings');
                 </button>
                 <a class="navbar-brand" href="/"><h1><span>WP</span>-ISSUES.COM</h1></a>
             </div>
-<!--            <div class="navbar-collapse collapse navbar-responsive-collapse">-->
-<!--                <ul class="nav navbar-nav navbar-right">-->
-<!--                    <li class="menu-item"><a class="current-menu-item" href="javascript:void(0)">Home</a></li>-->
-<!--                    <li class="menu-item"><a href="javascript:void(0)">Services</a></li>-->
-<!--                    <li class="menu-item"><a href="javascript:void(0)">About</a></li>-->
-<!--                    <li class="menu-item"><a href="javascript:void(0)">FAQs</a></li>-->
-<!--                    <li class="menu-item"><a href="javascript:void(0)">Create Mission</a></li>-->
-<!--                    <li class="menu-item"><a href="javascript:void(0)">Money Back Guarantee</a></li>-->
-<!--                </ul>-->
-<!--            </div>-->
+
             <?php
-                wp_nav_menu( array(
-                        'menu'              => 'primary',
-                        'theme_location'    => 'primary',
-                        'depth'             => 2,
-                        'container'         => 'div',
-                        'container_class'   => 'navbar-collapse collapse navbar-responsive-collapse',
-                        'container_id'      => 'mobile-collapse',
-                        'menu_class'        => 'nav navbar-nav navbar-right',
-                        'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-                        'walker'            => new wp_bootstrap_navwalker())
+            if(!is_user_logged_in()) {
+                wp_nav_menu(array(
+                        'menu' => 'primary',
+                        'theme_location' => 'primary',
+                        'depth' => 2,
+                        'container' => 'div',
+                        'container_class' => 'navbar-collapse collapse navbar-responsive-collapse',
+                        'container_id' => 'mobile-collapse',
+                        'menu_class' => 'nav navbar-nav navbar-right',
+                        'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+                        'walker' => new wp_bootstrap_navwalker())
                 );
+            } else {
+                wp_nav_menu(array(
+                        'menu' => 'loggedin',
+                        'theme_location' => 'loggedin',
+                        'depth' => 2,
+                        'container' => 'div',
+                        'container_class' => 'navbar-collapse collapse navbar-responsive-collapse',
+                        'container_id' => 'mobile-collapse',
+                        'menu_class' => 'nav navbar-nav navbar-right',
+                        'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
+                        'walker' => new wp_bootstrap_navwalker())
+                );
+            }
             ?>
         </div>
     </div>
