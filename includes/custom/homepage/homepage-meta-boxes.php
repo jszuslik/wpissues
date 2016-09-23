@@ -19,8 +19,7 @@ if($homepgname == 'Home'){
 function wpi_meta_homepage_callback( $post ){
     wp_nonce_field( basename( __FILE__ ), 'wpi_homepage_nonce' );
     $wpi_homepage_stored_meta = get_post_meta( $post->ID );
-    ?>
-    <?php
+
     $post_args = array(
         'posts_per_page'   => -1,
         'sort_order' => 'asc',

@@ -54,6 +54,7 @@ require_once('includes/scripts/scripts.php');
 require_once('includes/custom/wp_bootstrap_navwalker.php');
 require_once('includes/custom/options.php');
 require_once('includes/custom/custom-functions.php');
+require_once('includes/custom/custom-meta-boxes.php');
 require_once('includes/custom/slides/slides-post-type.php');
 require_once('includes/custom/slides/slide-meta-boxes.php');
 require_once('includes/custom/homepage/homepage-meta-boxes.php');
