@@ -115,8 +115,7 @@ function render_wpi_assigned_agent($object){
 
     ?>
     <div>
-        <label for="assigned_agent">Assigned Agent</label>
-        <select name="assigned_agent">
+        <select id="assigned_agent" name="assigned_agent">
             <option selected value="0" disabled>Choose Agent</option>
             <?php
                 $args = array(
@@ -124,16 +123,15 @@ function render_wpi_assigned_agent($object){
                     'role'         => 'administrator'
                 );
                 $admins = get_users( $args );
+                $value = get_post_meta($object->ID, "assigned_agent", true);
                 foreach($admins as $admin){
-                    $value = get_post_meta($object->ID, "assigned_agent", true);
                     $admin_id = $admin->ID;
-                    p(get_post_meta($object->ID, "assigned_agent", true));
-                    if($admin_id == $value){
+                    if($value == $admin_id){
                     ?>
                         <option selected value="<?php echo $admin_id; ?>"><?php echo $admin->data->user_nicename; ?></option>
                     <?php } else { ?>
                         <option value="<?php echo $admin_id; ?>"><?php echo $admin->data->user_nicename; ?></option>
-                    <?php }
+                        <?php }
                 }
             ?>
         </select>
@@ -210,33 +208,27 @@ function render_wpi_mission_chat($object){
     echo wpi_mission_question_admin($order, $post_id);
     echo '</div>';
 }
-function save_wpi_custom_meta_box($post_id, $post, $update)
-{
-    if (!isset($_POST["wpi-assigned-agent-nonce"]) || !wp_verify_nonce($_POST["wpi-assigned-agent-nonce"], basename(__FILE__)))
-        return $post_id;
-    if(!current_user_can("edit_post", $post_id))
-        return $post_id;
+function save_wpi_agent_meta_box($post_id){
 
-    if(defined("DOING_AUTOSAVE") && DOING_AUTOSAVE)
-        return $post_id;
+    // Checks save status
+    $is_autosave = wp_is_post_autosave( $post_id );
+    $is_revision = wp_is_post_revision( $post_id );
+    $is_valid_nonce = ( isset( $_POST[ 'wpi-assigned-agent-nonce'] ) && wp_verify_nonce( $_POST['wpi-assigned-agent-nonce'], basename( __FILE__ ) ) ) ? 'true' : 'false';
 
-    $slug = "mission";
-    if($slug != $post->post_type)
-        return $post_id;
+    // Exits script depending on save status
+    if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
+        return;
+    }
 
     $assigned_agent = '';
-    if(isset($_POST["assigned_agent"]))
-    {
+    if(isset($_POST["assigned_agent"])) {
         $assigned_agent = $_POST["assigned_agent"];
     }
-    if(!get_post_meta($post_id, "assigned_agent", true)){
-        add_post_meta($post_id, "assigned_agent", $assigned_agent);
-    } else {
-        update_post_meta($post_id, "assigned_agent", $assigned_agent);
-    }
+    update_post_meta($post_id, "assigned_agent", $assigned_agent);
+
 
 }
-add_action('save_post', 'save_wpi_custom_meta_box', 10, 3);
+add_action('save_post', 'save_wpi_agent_meta_box');
 
 function wpi_mission_post_columns($columns){
     unset(
