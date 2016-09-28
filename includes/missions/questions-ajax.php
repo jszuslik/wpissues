@@ -150,6 +150,6 @@ function wpi_email_on_question($to, $from, $subject, $question) {
     $message .= "</table>";
     $message .= '</body></html>';
 
-    mail($to_user_email, $subject, $message, $headers);
+    @mail($to_user_email, $subject, $message, $headers);
 
 }
