@@ -320,7 +320,7 @@ function wpi_slug_order_number($slug){
     return $slug;
 }
 function wpi_mission_question_admin($order, $post_id) {
-
+    // p($order);
 
     $chat = '<div id="chat_inner" class="chat_inner">';
     $chat .= '<div id="chat_content" class="chat_content">';
@@ -345,8 +345,9 @@ function wpi_mission_question_admin($order, $post_id) {
     $user_id = $user->ID;
     $user_role = $user->roles[0];
 
-    $creator_id = get_the_author_id();
-    $agent_id = get_post_meta($post_id, 'assigned_agent', true);
+    global $wpdb;
+    $creator_id = $wpdb->get_var("SELECT post_author FROM wp_posts WHERE id = ".$post_id);
+    $agent_id = $wpdb->get_var("SELECT meta_value FROM wp_postmeta WHERE post_id = ". $post_id ." AND meta_key = 'assigned_agent'");
 
     $form = '<input type="hidden" name="order_title" id="order_title" value="'.wpi_show_custom_order_number($order->id, $order).'">';
     $form .= '<input type="hidden" name="post_id" id="post_id" value="'.$post_id.'">';
@@ -355,6 +356,9 @@ function wpi_mission_question_admin($order, $post_id) {
     $form .= '<input type="hidden" name="user_role" id="user_role" value="'.$user_role.'">';
     $form .= '<input type="hidden" name="user_role" id="user_role" value="'.$user_role.'">';
     $form .= '<input type="hidden" name="creator_id" id="creator_id" value="'.$creator_id.'">';
+    if($agent_id != null){
+        $form .= '<input type="hidden" name="agent_id" id="agent_id" value="'.$agent_id.'">';
+    }
     $form .= '<div id="chat_bottom" class="chat_bottom">';
     $form .= '<textarea class="chat_input" name="chat_input" id="chat_input" placeholder="Enter Message Here"></textarea>';
     $form .= '<button class="chat_send" onclick="adminQuestion()"></button>';
