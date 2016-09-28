@@ -133,15 +133,14 @@ function wpi_email_on_question($to, $from, $subject, $question) {
         $to_user = get_user_by('ID', $to);
         $to_user_email = $to_user->user_email;
     } else {
-        $to_user = get_user_by('ID', 1);
-        $to_user_email = $to_user->user_email;
+        $to_user_email = 'support@wp-issues.com';
     }
     if($from != null){
         $from_user = get_user_by('ID', $from);
         $from_user_email = $from_user->user_email;
     } else {
         $from_user = get_user_by('ID', 1);
-        $from_user_email = $from_user->user_email;
+        $from_user_email = 'support@wp-issues.com';
     }
 
     $headers = "From: do-not-reply@wp-issues.com\r\n";
