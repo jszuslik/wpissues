@@ -1,5 +1,5 @@
 <?php
-$bg_img_1 = 'http://dev.wp-issues.com/wp-content/uploads/2016/07/bd1.png';
+$bg_img_1 = url().'/wp-content/uploads/2016/07/bd1.png';
 ?>
 <div class="desktop_only jumbotron" style="background-image: url(<?php wpi_switch_img_url_to_data_string($bg_img_1, '', '', true); ?>)">
     <!--<div class="container">-->
