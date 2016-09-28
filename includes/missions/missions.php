@@ -42,11 +42,16 @@ function wpi_mission_question_form($order, $post_id) {
     $user_id = $user->ID;
     $user_role = $user->roles[0];
 
+    $creator_id = get_the_author_id();
+    $agent_id = get_post_meta($post_id, 'assigned_agent', true);
+
     $form = '<input type="hidden" name="order_title" id="order_title" value="'.wpi_show_custom_order_number($order->id, $order).'">';
     $form .= '<input type="hidden" name="post_id" id="post_id" value="'.$post_id.'">';
     $form .= '<input type="hidden" name="order_id" id="order_id" value="'.$order->id.'">';
     $form .= '<input type="hidden" name="user_id" id="user_id" value="'.$user_id.'">';
     $form .= '<input type="hidden" name="user_role" id="user_role" value="'.$user_role.'">';
+    $form .= '<input type="hidden" name="creator_id" id="creator_id" value="'.$creator_id.'">';
+    $form .= '<input type="hidden" name="agent_id" id="agent_id" value="'.$agent_id.'">';
     $form .= '<div id="chat_bottom" class="chat_bottom">';
     $form .= '<textarea class="chat_input" name="chat_input" id="chat_input" placeholder="Ask Question Here"></textarea>';
     $form .= '<button class="chat_send" onclick="askQuestion()"></button>';

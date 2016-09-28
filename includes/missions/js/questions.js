@@ -14,7 +14,9 @@ function askQuestion() {
         'order_title' : order_title,
         'user_id' : user_id,
         'user_role' : user_role,
-        'question' : question
+        'question' : question,
+        'creator_id' : creator_id,
+        'agent_id' : agent_id
     };
     var oldscrollHeight = document.getElementById("chat_inner").scrollHeight;
     // console.log(oldscrollHeight);

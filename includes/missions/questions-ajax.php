@@ -39,6 +39,17 @@ function wpi_submit_question() {
         if (isset ($_POST['admin_page'])) {
             $admin_page = $_POST['admin_page'];
         }
+        if (isset ($_POST['creator_id'])) {
+            $creator_id = $_POST['creator_id'];
+        }
+        if (isset ($_POST['agent_id'])) {
+            $agent_id = $_POST['agent_id'];
+        }
+    }
+    if($creator_id == $user_id){
+        wpi_email_on_question($agent_id, $creator_id, $order_title, $message);
+    } else {
+        wpi_email_on_question($creator_id, $agent_id, $order_title, $message);
     }
     $data = array(
         'entry_key' => $entry_key,
@@ -115,4 +126,30 @@ function wpi_reload_questions(){
     }
     echo $chat;
     wp_die();
+}
+
+function wpi_email_on_question($to, $from, $subject, $question) {
+    $to_user = get_user_by('ID', $to);
+    $to_user_email = $to_user->user_email;
+
+    $from_user = get_user_by('ID', $from);
+    $from_user_email = $from_user->user_email;
+
+    $headers = "From: do-not-reply@wp-issues.com\r\n";
+    $headers .= "Reply-To: do-not-reply@wp-issues.com\r\n";
+    $headers .= "CC: " . $from_user_email . "\r\n";
+    $headers .= "MIME-Version: 1.0\r\n";
+    $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+    $message = '<html><body>';
+    $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+    $message .= "<tr style='background: #eee;'><td><strong>Order Number:</strong> </td><td>" . $subject . "</td></tr>";
+    $message .= "<tr><td><strong>Email:</strong> </td><td>" . $from_user_email . "</td></tr>";
+    $message .= "<tr><td><strong>Message:</strong> </td><td>" . $question . "</td></tr>";
+    $message .= "<tr><td><strong>Mission URL (click to respond):</strong> </td><td>" . url(). "/mission/". $subject . "</td></tr>";
+    $message .= "</table>";
+    $message .= '</body></html>';
+
+    mail($to_user_email, $subject, $message, $headers);
+
 }
