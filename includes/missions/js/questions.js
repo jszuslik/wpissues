@@ -5,6 +5,8 @@ function askQuestion() {
     var order_title = jQuery("#order_title").val();
     var user_id = jQuery("#user_id").val();
     var user_role = jQuery("#user_role").val();
+    var creator_id = jQuery("#creator_id").val();
+    var agent_id = jQuery("#agent_id").val();
 
     var data = {
         'action' : 'question_submit',
