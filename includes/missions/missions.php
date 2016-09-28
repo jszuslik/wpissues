@@ -51,7 +51,9 @@ function wpi_mission_question_form($order, $post_id) {
     $form .= '<input type="hidden" name="user_id" id="user_id" value="'.$user_id.'">';
     $form .= '<input type="hidden" name="user_role" id="user_role" value="'.$user_role.'">';
     $form .= '<input type="hidden" name="creator_id" id="creator_id" value="'.$creator_id.'">';
-    $form .= '<input type="hidden" name="agent_id" id="agent_id" value="'.$agent_id.'">';
+    if($agent_id != null){
+        $form .= '<input type="hidden" name="agent_id" id="agent_id" value="'.$agent_id.'">';
+    }
     $form .= '<div id="chat_bottom" class="chat_bottom">';
     $form .= '<textarea class="chat_input" name="chat_input" id="chat_input" placeholder="Ask Question Here"></textarea>';
     $form .= '<button class="chat_send" onclick="askQuestion()"></button>';
