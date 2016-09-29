@@ -30,11 +30,11 @@ function wpi_get_att_id_from_image_url( $attachment_url = '' ) {
 
 function wpi_switch_img_url_to_data_string($url, $image_size = '', $alt_tag = '', $is_inline = false, $width = '', $height = ''){
     $image_id = wpi_get_att_id_from_image_url($url);
-    p($image_id);
+    // p($image_id);
     $image_src = wp_get_attachment_image_src($image_id, $image_size);
-    p($image_src);
+    // p($image_src);
     $image_data_str = base64_encode(file_get_contents($image_src[0]));
-    p($image_data_str);
+    // p($image_data_str);
     $image_file_type = image_type_to_mime_type(exif_imagetype($image_src[0]));
     $image_src_string = 'data:';
     $image_src_string .= $image_file_type.';base64,';
