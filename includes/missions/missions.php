@@ -119,13 +119,13 @@ function wpi_mission_submit_form($order) {
                     <div class="col-xs-12 col-sm-12 col-md-5 col-lg-push-1 col-lg-5">
                         <div class="form-group">
                             <label for="website" class="control-label">Website URL</label>
-                            <input type="text" name="website_url" class="form-control" id="website_url" autocomplete="off">
+                            <input type="text" name="website_url" class="form-control" id="website_url" autocomplete="off" required>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-5 col-lg-push-1 col-lg-5">
                         <div class="form-group">
                             <label for="admin_url" class="control-label">Website Admin URL</label>
-                            <input type="text" class="form-control" name="admin_url" id="admin_url" autocomplete="off">
+                            <input type="text" class="form-control" name="admin_url" id="admin_url" autocomplete="off" required>
                         </div>
                     </div>
                 </div>
@@ -133,13 +133,13 @@ function wpi_mission_submit_form($order) {
                     <div class="col-xs-12 col-sm-12 col-md-5 col-lg-push-1 col-lg-5">
                         <div class="form-group">
                             <label for="username" class="control-label">Admin Username</label>
-                            <input type="text" class="form-control" name="username" id="username" autocomplete="off">
+                            <input type="text" class="form-control" name="username" id="username" autocomplete="off" required>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-12 col-md-5 col-lg-push-1 col-lg-5">
                         <div class="form-group">
                             <label for="admin_pw" class="control-label">Admin Password</label>
-                            <input type="password" class="form-control" name="admin_pw" id="admin_pw" autocomplete="off">
+                            <input type="password" class="form-control" name="admin_pw" id="admin_pw" autocomplete="off" required>
                         </div>
                     </div>
                 </div>
@@ -147,7 +147,7 @@ function wpi_mission_submit_form($order) {
                     <div class="col-xs-12 col-sm-12 col-md-10 col-md-push-1 col-lg-10 col-lg-push-1">
                         <div class="form-group">
                             <label for="details" class="control-label">Mission Details</label>
-                            <textarea class="form-control" name="details" id="details" rows="5"></textarea>
+                            <textarea class="form-control" name="details" id="details" rows="5" required></textarea>
                         </div>
                     </div>
                 </div>

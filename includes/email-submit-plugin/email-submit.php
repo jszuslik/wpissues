@@ -5,7 +5,7 @@ function wpi_email_form(){
     <div class="form-group label-floating is-empty">
         <label for="focusedInput2" class="control-label">Enter Your E-mail Address
         </label>
-        <input type="email" id="email" name="email" class="form-control" autocomplete="off">
+        <input type="email" id="email" name="email" class="form-control" autocomplete="off" required>
 
         <p class="help-block">Your e-mail will only be used to communicate with you</p>
 
