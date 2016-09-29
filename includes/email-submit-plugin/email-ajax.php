@@ -15,6 +15,11 @@ function wpi_user_submit_email(){
         wp_die();
     }
 
+    if( $_POST['type'] == 'email_fail') {
+        echo "Email not valid";
+        wp_die();
+    }
+
     if( $_POST['type'] == 'create_mission'){
         wpi_add_mission_to_cart();
         echo url()."/checkout";
