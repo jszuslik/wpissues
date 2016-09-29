@@ -22,6 +22,7 @@ $bg_img_1 = url().'/wp-content/uploads/2016/07/bd1.png';
                             $content = get_post_meta( get_the_ID(), 'wpi_slide_content', true );
                             $tagline = get_post_meta( get_the_ID(), 'wpi_slide_tagline', true );
                             $image_url = get_post_meta( get_the_ID(), 'wpi_slide_image', true );
+                            p($image_url);
 
 
                             // echo '<pre>'; echo $content; echo '</pre>';
