@@ -38,7 +38,7 @@ function wpi_email_send($email_from) {
     $email_to = "support@wp-issues.com";
     $email_subject = "New E-mail Submission";
 
-    $headers = "From: do-not-reply@wp-issues.com\r\n";
+    $headers = "From: WordPress Issues &lt;do-not-reply@wp-issues.com&gt;\r\n";
     $headers .= "Reply-To: do-not-reply@wp-issues.com\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
