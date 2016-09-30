@@ -18,7 +18,7 @@ if (have_posts()) :
                 <h3><?php echo $cta_message; ?></h3>
             </div>
             <div class="col-xs-12 col-md-12 col-md-3 col-lg-3">
-                <a href="<?php echo get_the_permalink($cta_link); ?>" class="btn btn-raised">Submit Mission Now!</a>
+                <a id="mission-cta" href="#" class="btn btn-raised">Submit Mission Now!</a>
             </div>
         </div>
     </div>
