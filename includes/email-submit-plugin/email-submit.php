@@ -35,16 +35,19 @@ function wpi_email_redirect($email){
 
 function wpi_email_send($email_from) {
 
-        $email_to = "joshuaszuslik@gmail.com";
-        $email_subject = "New E-mail Submission";
+    $email_to = "support@wp-issues.com";
+    $email_subject = "New E-mail Submission";
 
-        $email_message = "User Submitted new E-mail\n\n";
+    $headers = 'From: ' . $email_from . "\r\n" . 'Reply-To: ' . $email_from . "\r\n" . 'X-Mailer: PHP/' . phpversion();
 
-        $email_message .= "Email: " . wpi_clean_string($email_from) . "\n";
+    $message = '<html><body>';
+    $message .= '<h2>New E-mail Submission</h2>';
+    $message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+    $message .= "<tr style='background: #eee;'><td><strong>Email:</strong> </td><td>" . $email_from . "</td></tr>";
+    $message .= "</table>";
+    $message .= '</body></html>';
 
-        $headers = 'From: ' . $email_from . "\r\n" . 'Reply-To: ' . $email_from . "\r\n" . 'X-Mailer: PHP/' . phpversion();
-
-        @mail($email_to, $email_subject, $email_message, $headers);
+    @mail($email_to, $email_subject, $message, $headers);
 }
 function wpi_add_email_submission($email){
     global $wpdb;
