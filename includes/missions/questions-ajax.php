@@ -143,7 +143,7 @@ function wpi_email_on_question($to, $from, $subject, $question) {
         $from_user_email = 'support@wp-issues.com';
     }
 
-    $headers = "From: WordPress Issues &lt;do-not-reply@wp-issues.com&gt;\r\n";
+    $headers = "From: do-not-reply@wp-issues.com\r\n";
     $headers .= "Reply-To: do-not-reply@wp-issues.com\r\n";
     $headers .= "CC: " . $from_user_email . "\r\n";
     $headers .= "MIME-Version: 1.0\r\n";
